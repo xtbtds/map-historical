@@ -1,0 +1,75 @@
+
+    <div>
+        <button onclick="myFunction()">-</button> -->
+        <script>
+        function myFunction() {
+            _SVG = document.querySelector('svg');
+            VB = _SVG.getAttribute('viewBox').split(' ').map(c => +c)
+            if (VB[2] < 1000 && VB[3] < 1000) {
+                VB[2] = VB[2] + 50
+                VB[3] = VB[3] + 50
+                _SVG.setAttribute('viewBox', VB.join(' '));
+            } else {
+                console.log("cant zoom less")
+            }
+        }
+        </script>
+
+        <button onclick="myFunction1()">+</button>
+        <script>
+        function myFunction1() {
+            _SVG = document.querySelector('svg');
+            VB = _SVG.getAttribute('viewBox').split(' ').map(c => +c)
+            if (VB[2] > 51 && VB[3] > 51) {
+                VB[2] = VB[2] - 50
+                VB[3] = VB[3] - 50
+                _SVG.setAttribute('viewBox', VB.join(' '));
+            } else {
+                console.log("cant zoom more")
+            }
+        }
+        </script>
+    </div>
+    <div id = "yyy">
+    <svg xmlns="" width = "700" height="300" viewBox="0 0 700 300" >
+        <!-- style="border: rgb(0, 0, 0) solid" -->
+    <defs>
+        <style>.cls-1,.cls-2{fill:none;stroke:#f4f4a8;stroke-miterlimit:10;}.cls-1{stroke-width:8px;}.cls-2{stroke-width:5px;}.cls-3{fill:#cfe2e0;}.cls-4{fill:#f4c9c9;}</style>
+    </defs>
+    <g id="roads">
+        <path class="cls-1" d="M-3.25,15.18l371.06-1.37h0" transform="translate(3.27 14.5)"/>
+        <path class="cls-1" d="M293.6-13.76l44.59,235.57h0" transform="translate(3.27 14.5)"/>
+        <path class="cls-1" d="M15.47-13.76l1.7,239h0" transform="translate(3.27 14.5)"/>
+        <path class="cls-2" d="M137.68,136.37c4.77.34-33,0-33,0l37.79.34L197.94,134l34.38-3.41,83.58-15" transform="translate(3.27 14.5)"/>
+        <path class="cls-2" d="M96.83,29.47V70.33h-32" transform="translate(3.27 14.5)"/>
+        <line class="cls-2" x1="100.1" y1="29.68" x2="100.1" y2="49.77"/>
+        <polyline class="cls-2" points="100.1 84.83 113.04 95.72 116.1 99.81 116.1 104.91 117.46 118.53 142.65 118.53 147.08 120.23 149.12 125.68 149.12 133.51 149.12 140.66 149.12 146.79 149.12 149.17"/>
+        <polyline class="cls-2" points="117.09 114.79 115.76 120.23 112.7 127.04 107.93 150.87 107.93 189.68"/>
+        <line class="cls-2" x1="264.87" y1="163.81" x2="260.28" y2="140.66"/>
+        <line class="cls-2" x1="241.38" y1="29.68" x2="245.8" y2="49.77"/>
+        <polyline class="cls-2" points="189.63 28.32 189.63 102.53 218.91 102.53"/>
+        <path class="cls-2" d="M113.82,100.29" transform="translate(3.27 14.5)"/>
+    </g>
+    <g id="buildings">
+        <path class="cls-3" d="M37.58,35.26c.68.49,52.76.49,52.76.49V62H62.09V72.52H90.34V84.43h16V104H64.83v3.16H52.55L52.21,110H64.83V113H75.7v10.55H37.58Z" transform="translate(3.27 14.5)"/>
+        <polygon class="cls-3" points="115.4 49.77 137.19 49.77 137.19 81.23 130.72 81.23 130.04 77.83 115.4 77.83 115.4 49.77"/>
+        <polygon class="cls-3" points="140.93 49.77 183.14 49.77 183.14 81.23 163.06 81.23 169.19 120.23 154.21 121.69 151.48 111.87 159.99 110.17 155.23 81.23 142.97 81.23 140.93 49.77"/>
+        <path class="cls-3" d="M190.09,33.37l.34.68H235.7l4.62,32.68H195.87Z" transform="translate(3.27 14.5)"/>
+        <polygon class="cls-3" points="257.36 47.87 284.25 47.87 288.33 70.34 260.28 75.45 257.36 47.87"/>
+        <polygon class="cls-3" points="264.87 76.81 286.63 72.72 296.87 130.11 275.06 132.98 271.31 114.79 264.87 114.79 262.57 102.53 269.27 100.98 267.23 90.08 262.57 88.72 260.28 81.23 264.87 81.23 264.87 76.81"/>
+        <polygon class="cls-3" points="276.76 140.66 296.87 138.08 305.36 178.25 272.84 183.7 270.63 173.49 283.57 170.76 281.52 158.51 272.84 159.53 270.63 151.21 278.57 149.17 276.76 140.66"/>
+        <polygon class="cls-3" points="40.84 143.87 71.14 143.87 71.14 151.21 77.61 151.21 77.61 160.89 68.1 160.89 68.1 183.7 96.67 183.7 96.67 193.91 81.02 193.91 80.33 187.79 71.82 187.79 72.16 228.89 40.84 228.89 40.84 143.87"/>
+        <polygon class="cls-3" points="356.08 49.77 326.12 49.77 360.84 220.47 360.84 49.77 356.08 49.77"/>
+    </g>
+    <g id="destroyed">
+        <polygon class="cls-4 svg" points="169.19 120.23 232.5 120.23 232.5 138.08 200.84 138.08 200.84 135.12 169.19 135.12 169.19 120.23"/>
+        <rect class="cls-4" x="236.25" y="159.19" width="13.96" height="16.68"/>
+        <rect class="cls-4" x="210.04" y="159.19" width="22.47" height="27.19"/>
+        <polygon class="cls-4" points="189.63 156.81 191.65 171.11 137.19 175.87 135.82 160.89 189.63 156.81"/>
+        <rect class="cls-4" x="224.33" y="90.08" width="8.17" height="17.02"/>
+    </g>
+</svg>
+</div>
+
+
+<script src="navigation.js"></script>
